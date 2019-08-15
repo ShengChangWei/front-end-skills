@@ -28,4 +28,4 @@
 
 ## 3、内容
 
-* [2019-08-07-git基本操作-shengmo](/tree/master/2019-08-07-git基本操作-shengmo)
+* [2019-08-07-git基本操作-shengmo](/2019-08-07-git基本操作-shengmo)
