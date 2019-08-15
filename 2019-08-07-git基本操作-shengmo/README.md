@@ -75,43 +75,8 @@
 
 ## 7、安装Git
 
-  > 在Linux上安装Git
-
-    1. 如果碰到Ubuntu或Debian 请使用下面命令:
-
-       $ git  //这条命令检查系统中是否有Git
-
-       sudo apt-get install git  // 如果没有,则使用这条命令来进行安装Git
-
-    2. 如果碰到的是 CentOS 请使用下面命令:
-
-      $ git  // 这条命令检查系统中是否有Git
-
-      sudo yum install git
-
-  > 在Windows上安装Git(下一步到最后 就可以了)
-
-    1. 如果是32位系统 请使用安装包
-
-       [32位系统的Git](./Other/Git-2.14.3-32-bit.exe)  
-
-    2. 如果是64位系统 请使用安装包
-
-       [64位系统的Git](./Other/Git-2.14.3-64-bit.exe) 
-
-    检测Git是否安装好了？
-
-      打开命令行工具--Git bash
-      在命令行中输入 git --version;
-
-      $ git --version
-      git version 2.15.0.windows.1
-
-      代表成功了
-
-  > 在Mac OS 上安装Git
-
-    自己上Git官网搜索
+![官网下载git](https://git-scm.com/downloads)即可，在这里不累赘介绍了
+![廖雪峰git安装](https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496)
 
 ## 8、初始化git
 
