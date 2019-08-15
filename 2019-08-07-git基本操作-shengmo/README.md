@@ -75,8 +75,8 @@
 
 ## 7、安装Git
 
-![官网下载git](https://git-scm.com/downloads)即可，在这里不累赘介绍了
-![廖雪峰git安装](https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496)
+[官网下载git](https://git-scm.com/downloads)即可，在这里不累赘介绍了
+[廖雪峰git安装](https://www.liaoxuefeng.com/wiki/896043488029600/896067074338496)
 
 ## 8、初始化git
 
