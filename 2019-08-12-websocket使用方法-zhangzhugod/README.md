@@ -53,14 +53,18 @@ WebSocket 协议本质上是一个基于 TCP 的协议。
   ### 5.2 WebSocket 属性
           以下是 WebSocket 对象的属性。假定我们使用了以上代码创建了 Socket 对象：
 
-          属性 | 描述
-          -|-
-          Socket.readyState | 只读属性 readyState 表示连接状态，可以是以下值：|
-           | 0 - 表示连接尚未建立。
-           | 1 - 表示连接已建立，可以进行通信。
-           | 2 - 表示连接正在进行关闭。
-           | 3 - 表示连接已经关闭或者连接不能打开。
-          Socket.bufferedAmount | 只读属性 bufferedAmount 已被 send() 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。|
+属性名 | 类型 | 描述
+ -|-|:-
+binaryType     | DOMString     | 一个字符串表示被传输二进制的内容的类型。取值应当是"blob"或者"arraybuffer"。"blob"表示使用DOM Blob 对象，而"arraybuffer"表示使用 ArrayBuffer 对象。|
+bufferedAmount | unsigned long | 调用 send()) 方法将多字节数据加入到队列中等待传输，但是还未发出。该值会在所有队列数据被发送后重置为 0。而当连接关闭时不会设为0。如果持续调用send()，这个值会持续增长。只读。|
+extensions     | DOMString     | 服务器选定的扩展。目前这个属性只是一个空字符串，或者是一个包含所有扩展的列表。|
+onclose        | EventListener | 用于监听连接关闭事件监听器。当 WebSocket 对象的readyState 状态变为 CLOSED 时会触发该事件。这个监听器会接收一个叫close的 CloseEvent 对象。|
+onerror        | EventListener | 当错误发生时用于监听error事件的事件监听器。会接受一个名为“error”的event对象。|
+onmessage      | EventListener | 一个用于消息事件的事件监听器，这一事件当有消息到达的时候该事件会触发。这个Listener会被传入一个名为"message"的 MessageEvent 对象。|
+onopen         | EventListener | 一个用于连接打开事件的事件监听器。当readyState的值变为 OPEN 的时候会触发该事件。该事件表明这个连接已经准备好接受和发送数据。这个监听器会接受一个名为"open"的事件对象。|
+protocol       | DOMString     | 一个表明服务器选定的子协议名字的字符串。这个属性的取值会被取值为构造器传入的protocols参数。|
+readyState     | unsigned short | 连接的当前状态。取值是 Ready state constants 之一。 只读。|
+url            | DOMString     | 传入构造器的URL。它必须是一个绝对地址的URL。只读。|
 
   ### 5.3 WebSocket 事件
 
@@ -100,11 +104,11 @@ WebSocket 协议本质上是一个基于 TCP 的协议。
 
 
 ## 6、对比
-1 | 传统轮询 | 长轮询 | 服务器发送事件 | WebSocket |
+维度 | 传统轮询 | 长轮询 | 服务器发送事件 | WebSocket |
 浏览器支持	| 几乎所有现代浏览器  | 几乎所有现代浏览器 | Firefox 6+ Chrome 6+ Safari 5+ Opera 10.1+	 ｜ IE 10+ Edge Firefox 4+ Chrome 4+ Safari 5+ Opera 11.5+ |
 服务器负载	| 较少的CPU资源，较多的内存资源和带宽资源  ｜ 与传统轮询相似，但是占用带宽较少	｜ 与长轮询相似，除非每次发送请求后服务器不需要断开连接 ｜ 无需循环等待（长轮询），CPU和内存资源不以客户端数量衡量，而是以客户端事件数衡量。四种方式里性能最佳。 |
 客户端负载	｜ 占用较多的内存资源与请求数。 ｜ 与传统轮询相似。 ｜ 浏览器中原生实现，占用资源很小。 ｜ 同Server-Sent Event。 |
-延迟         ｜ 非实时，延迟取决于请求间隔。 ｜	同传统轮询。	   ｜非实时，默认3秒延迟，延迟可自定义。 ｜实时。 |
+延迟         ｜ 非实时，延迟取决于请求间隔。 ｜	同传统轮询。	   ｜非实时，默认3秒延迟，延迟可自定义。 ｜ 实时。 |
 实现复杂度	｜ 非常简单。 ｜ 需要服务器配合，客户端实现非常简单。 ｜ 需要服务器配合，而客户端实现甚至比前两种更简单。 ｜ 需要Socket程序实现和额外端口，客户端实现简单。 |
 
 ## 7、 websocket重连机制实现
@@ -240,7 +244,9 @@ function reconnect(url) {
 ## 8、服务器
 由于WebSocket是一个协议，服务器具体怎么实现，取决于所用编程语言和框架本身。Node.js本身支持的协议包括TCP协议和HTTP协议，要支持WebSocket协议，需要对Node.js提供的HTTPServer做额外的开发。已经有若干基于Node.js的稳定可靠的WebSocket实现，我们直接用npm安装使用即可。
 
-
+## 9、相关链接
+[angular5 组件中使用websocket通信](https://www.jianshu.com/p/93122813a9d8)
+[websocket属性参数](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket)
 
 
 
