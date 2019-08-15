@@ -55,12 +55,12 @@ WebSocket 协议本质上是一个基于 TCP 的协议。
 
           属性 | 描述
           -|-
-          Socket.readyState | 只读属性 readyState 表示连接状态，可以是以下值：
+          Socket.readyState | 只读属性 readyState 表示连接状态，可以是以下值：|
            | 0 - 表示连接尚未建立。
            | 1 - 表示连接已建立，可以进行通信。
            | 2 - 表示连接正在进行关闭。
            | 3 - 表示连接已经关闭或者连接不能打开。
-          Socket.bufferedAmount | 只读属性 bufferedAmount 已被 send() 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。
+          Socket.bufferedAmount | 只读属性 bufferedAmount 已被 send() 放入正在队列中等待传输，但是还没有发出的 UTF-8 文本字节数。|
 
   ### 5.3 WebSocket 事件
 
@@ -83,7 +83,7 @@ WebSocket 协议本质上是一个基于 TCP 的协议。
   Socket.close()	  关闭连接
 
   ### 5.5 示例
-
+```
   // Create WebSocket connection.
   const socket = new WebSocket('ws://localhost:8080');
 
@@ -96,21 +96,22 @@ WebSocket 协议本质上是一个基于 TCP 的协议。
   socket.addEventListener('message', function (event) {
       console.log('Message from server ', event.data);
   });
-
+```
 
 
 ## 6、对比
->>>>>>>>>>>> | 传统轮询 | 长轮询 | 服务器发送事件 | WebSocket
-浏览器支持	| 几乎所有现代浏览器  | 几乎所有现代浏览器 | Firefox 6+ Chrome 6+ Safari 5+ Opera 10.1+	 ｜ IE 10+ Edge Firefox 4+ Chrome 4+ Safari 5+ Opera 11.5+
-服务器负载	| 较少的CPU资源，较多的内存资源和带宽资源  ｜ 与传统轮询相似，但是占用带宽较少	｜ 与长轮询相似，除非每次发送请求后服务器不需要断开连接 ｜ 无需循环等待（长轮询），CPU和内存资源不以客户端数量衡量，而是以客户端事件数衡量。四种方式里性能最佳。
-客户端负载	｜ 占用较多的内存资源与请求数。 ｜ 与传统轮询相似。 ｜ 浏览器中原生实现，占用资源很小。 ｜ 同Server-Sent Event。
-延迟         ｜ 非实时，延迟取决于请求间隔。 ｜	同传统轮询。	   ｜非实时，默认3秒延迟，延迟可自定义。 ｜实时。
-实现复杂度	｜ 非常简单。 ｜ 需要服务器配合，客户端实现非常简单。 ｜ 需要服务器配合，而客户端实现甚至比前两种更简单。 ｜ 需要Socket程序实现和额外端口，客户端实现简单。
+1 | 传统轮询 | 长轮询 | 服务器发送事件 | WebSocket |
+浏览器支持	| 几乎所有现代浏览器  | 几乎所有现代浏览器 | Firefox 6+ Chrome 6+ Safari 5+ Opera 10.1+	 ｜ IE 10+ Edge Firefox 4+ Chrome 4+ Safari 5+ Opera 11.5+ |
+服务器负载	| 较少的CPU资源，较多的内存资源和带宽资源  ｜ 与传统轮询相似，但是占用带宽较少	｜ 与长轮询相似，除非每次发送请求后服务器不需要断开连接 ｜ 无需循环等待（长轮询），CPU和内存资源不以客户端数量衡量，而是以客户端事件数衡量。四种方式里性能最佳。 |
+客户端负载	｜ 占用较多的内存资源与请求数。 ｜ 与传统轮询相似。 ｜ 浏览器中原生实现，占用资源很小。 ｜ 同Server-Sent Event。 |
+延迟         ｜ 非实时，延迟取决于请求间隔。 ｜	同传统轮询。	   ｜非实时，默认3秒延迟，延迟可自定义。 ｜实时。 |
+实现复杂度	｜ 非常简单。 ｜ 需要服务器配合，客户端实现非常简单。 ｜ 需要服务器配合，而客户端实现甚至比前两种更简单。 ｜ 需要Socket程序实现和额外端口，客户端实现简单。 |
 
 ## 7、 websocket重连机制实现
 在弱网环境下，发送消息无法抵达接收端；抑或，断网到浏览器约定时限等一些异常情况都会触发onclose和onerror,所以理论上，我们只要在onclose和onerror时，重新创建长连接就可以。
  ## 7.1 实现
 根据上面的简单思路，代码如下：
+```
 var ws = new WebSocket(url);
 ws.onclose = function () {
   reconnect()
@@ -130,8 +131,9 @@ function reconnect(url) {
       };
     }, 2000);
 }
-
+```
 稍微抽取再丰富下，createWebSocket来创建websocket实例，initEventHandle来绑定各回调函数：
+```
 var ws = new WebSocket(url);
 ws.onclose = function () {
   reconnect()
@@ -172,11 +174,12 @@ function initEventHandle() {
         reconnect(wsUrl);
     };
 }
-
+```
  ## 7.3优化
 弱网、断连所导致重连都是被动的，而在一般的websocket连接中都是存在心跳机制的，客户端和服务端约定一个特定的心跳消息用于检测链路是否通信正常。
 我们通过心跳机制，在客户端来检测链路的正常，在约定时间间隔内收不到心跳或者其他任何通信消息时，客户端进行主动重连。
 所以下面优化的，我们需要加一个心跳检测的方法：
+```
 var heartCheck = {
     timeout: heartBeatTime*1000,  //  心跳检测时长
     timeoutObj: null, // 定时变量
@@ -192,7 +195,7 @@ var heartCheck = {
         },this.timeout)
     }
 }
-
+```
 心跳检测对象，定义了
 
 timeout：心跳超时时间
@@ -201,6 +204,7 @@ reset：重置心跳
 start：开启心跳
 当连接成功时，开启心跳；在收到消息时，重置心跳并开启下一轮检测，所以我们只需要在onopen和onmessage中加入心跳检测就行
 
+```
 // 初始化事件函数
 function initEventHandle() {
     ws.onclose = function () {
@@ -217,9 +221,10 @@ function initEventHandle() {
         handleMsg(msg)
     };
 }
-
+```
  ## 7.4 同时触发多次重连的问题
 在实际使用过程中，发现有些浏览器，reconnect重连会多次触发，所以需要给重连加一把锁，当一个重连正在执行的时候，无法再触发一次重连
+```
 function reconnect(url) {
     if (reconnect.lockReconnect) return;
     reconnect.lockReconnect = true;
@@ -228,6 +233,7 @@ function reconnect(url) {
         reconnect.lockReconnect = false;
     }, 2000);
 }
+```
 
 如果是同个浏览器中多个页面共用一个连接来进行通信，那么就需要使用浏览器缓存/数据路（localStorage/indexedDB）去加这把锁。
 
