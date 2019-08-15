@@ -115,7 +115,7 @@ url            | DOMString     | 传入构造器的URL。它必须是一个绝�
 在弱网环境下，发送消息无法抵达接收端；抑或，断网到浏览器约定时限等一些异常情况都会触发onclose和onerror,所以理论上，我们只要在onclose和onerror时，重新创建长连接就可以。
  ## 7.1 实现
 根据上面的简单思路，代码如下：
-```
+```javascript
 var ws = new WebSocket(url);
 ws.onclose = function () {
   reconnect()
