@@ -58,7 +58,7 @@ salesOffices.trigger = function() {
 
 salesOffices.listen(function(price, squareMeter) {
     console.log('价格=' + price);
-     console.log('squareMeter=' + squareMeter);
+     console.log('平方米=' + squareMeter);
 })
 
 salesOffices.trigger(200000, 88); // 输出： 200万，88平方米
