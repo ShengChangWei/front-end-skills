@@ -63,6 +63,9 @@ salesOffices.listen(function(price, squareMeter) {
 
 salesOffices.trigger(200000, 88); // 输出： 200万，88平方米
 ```
+
+<p style="color: red;">未完待续……</p>
+
 ## 通用的全局发布订阅事件
 
 ## 取消订阅事件
