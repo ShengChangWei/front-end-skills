@@ -31,10 +31,10 @@
 * [2019-08-07-git基本操作-shengmo](2019-08-07-git基本操作-shengmo)
 * [2019-08-12-websocket使用方法-zhangzhugod](2019-08-12-websocket使用方法-zhangzhugod)
 * [2019-08-15-rsa加密加签-zheng](2019-08-15-rsa加密加签-zheng)
+* [2019-08-16-发布订阅模式-shengmo](2019-08-16-发布订阅模式-shengmo)
 * REST风格
 * 前端安全问题（XSS、CSRF、HTTP劫持、页面劫持）
 * Vue双向绑定实现原理、Diff算法的内部实现
-* 观察者模式
 * 发布订阅模式
 * 前端测试工具
 * nginx
