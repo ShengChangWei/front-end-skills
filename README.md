@@ -35,6 +35,7 @@
 * [2019-08-15-rsa加密加签-zheng](2019-08-15-rsa加密加签-zheng)
 * [2019-08-16-发布订阅模式-shengmo](2019-08-16-发布订阅模式-shengmo)
 * [2019-08-19-rest风格-zhangzhugod](2019-08-19-rest风格-zhangzhugod)
+* [2019-08-20-单例模式-shengmo](2019-08-20-单例模式-shengmo)
 * 前端安全问题（XSS、CSRF、HTTP劫持、页面劫持）
 * Vue双向绑定实现原理、Diff算法的内部实现
 * 前端测试工具
