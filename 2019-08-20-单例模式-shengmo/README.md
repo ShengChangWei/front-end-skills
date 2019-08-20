@@ -1,8 +1,8 @@
 ---
-layout: post
-title:  "《JavaScript设计模式与开发实践》--单例模式"
+
+title:  "单例模式"
 date:   2019-08-01
-excerpt: "单例模式"
+excerpt: "《JavaScript设计模式与开发实践》--单例模式"
 javascript: true
 tag:
 - 设计模式
