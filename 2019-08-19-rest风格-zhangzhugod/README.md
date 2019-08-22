@@ -1,8 +1,9 @@
 # RESt 风格
 
 ## 1、概述REST是什么 ?
+> 文本
 
-       REST即表现层状态转换（英文：Representational State Transfer，简称REST）是Roy Fielding博士在2000年他的博士论文中提出来的一种软件架构风格。它是一种针对网络应用的设计和开发方式，可以降低开发的复杂性，提高系统的可伸缩性。
+REST即表现层状态转换（英文：Representational State Transfer，简称REST）是Roy Fielding博士在2000年他的博士论文中提出来的一种软件架构风格。它是一种针对网络应用的设计和开发方式，可以降低开发的复杂性，提高系统的可伸缩性。
 
        它涉及到三个重要名词：
 
