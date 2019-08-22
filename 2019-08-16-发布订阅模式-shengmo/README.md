@@ -118,7 +118,7 @@ setTimeout(function() {
 
 ```javascript
 event.unsubscribe = function(key, fn) {
-	const t = this.clientList[key];
+    const t = this.clientList[key];
     if (!t) { // 如果 key 对应的消息没有被人订阅，则直接返回
         return false;
     }
