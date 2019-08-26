@@ -29,13 +29,13 @@ REST通常基于使用HTTP ,URL ,和XML,json 以及 HTML这些现有的广泛流
 
 ## 2、RESTful是什么?
 
-     RESTful对应的中文是 REST 式的。
+RESTful对应的中文是 REST 式的。
 
-     RESTful Web Service是一种常见的REST的应用，是遵守了REST风格的Web服务。
+RESTful Web Service是一种常见的REST的应用，是遵守了REST风格的Web服务。
 
-     REST式的Web服务是一种ROA （面向自资源的架构）
+REST式的Web服务是一种ROA （面向自资源的架构）
 
-     用一句话来概括RESTful API(具有REST风格的API): 用URL定位资源，用HTTP动词（GET,HEAD,POST,PUT,PATCH,DELETE）描述操作，用响应状态码表示操作结果。
+用一句话来概括RESTful API(具有REST风格的API): 用URL定位资源，用HTTP动词（GET,HEAD,POST,PUT,PATCH,DELETE）描述操作，用响应状态码表示操作结果。
 
 ## 3、REST  架构的主要原则
 
