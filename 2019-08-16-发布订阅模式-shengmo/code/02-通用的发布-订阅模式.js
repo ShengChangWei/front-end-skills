@@ -3,7 +3,7 @@ var Event = (function(){
         subscribe, 
         publish, 
         unsubscribe;
-    subscribe = function() { //订阅事件
+    subscribe = function(key, fn) { //订阅事件
         if ( !this.clientList[ key ] ){ // 如果还没有订阅过此类消息，给该类消息创建一个缓存列表
                 this.clientList[ key ] = []; 
         } 
