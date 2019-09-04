@@ -187,9 +187,9 @@ public class GoodsController{
 
 ```
 ## 9、相关链接
-+[使用REST风格架构您需要知道的一些事](https://www.cnblogs.com/vipyoumay/p/8042924.html)
-+[详解REST架构风格](http://www.uml.org.cn/zjjs/201805142.asp)
-+[REST，以及RESTful的讲解](https://blog.csdn.net/qq_21383435/article/details/80032375)
++ [使用REST风格架构您需要知道的一些事](https://www.cnblogs.com/vipyoumay/p/8042924.html)
++ [详解REST架构风格](http://www.uml.org.cn/zjjs/201805142.asp)
++ [REST，以及RESTful的讲解](https://blog.csdn.net/qq_21383435/article/details/80032375)
 
 
 
