@@ -36,6 +36,7 @@
 * [2019-08-16-发布订阅模式-shengmo](2019-08-16-发布订阅模式-shengmo)
 * [2019-08-19-rest风格-zhangzhugod](2019-08-19-rest风格-zhangzhugod)
 * [2019-08-20-单例模式-shengmo](2019-08-20-单例模式-shengmo)
+* [2019-10-16-uni-app-shengmo](2019-10-16-uni-app-shengmo)
 * 微信小程序巡河功能及小程序遇到的bug
 * 常用的水务一张图整体功能
 * 动态组织结构流程图
