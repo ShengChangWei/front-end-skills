@@ -9,7 +9,7 @@ tag:
 comments: true
 ---
 
-![uni-app]({{ site.url }}/assets/img/js/app.png)
+![uni-app](./img/app.png)
 
 # uni-app 开发微信小程序
 
@@ -25,7 +25,7 @@ comments: true
 
 好处如图：
 
-![uni-app]({{ site.url }}/assets/img/js/uni-app.jpg)
+![uni-app](./img/uni-app.jpg)
 
 我使用`uni-app`框架主要用来开发微信小程序，我使用过程中感觉的好处是：
 
@@ -41,19 +41,19 @@ comments: true
 * `HBuilderX`是通用的前端开发工具，但为`uni-app`做了特别强化。
 * `HBuilderX`提供了一些插件，可直接下载安装，具体如下图： `工具` > `插件安装` 
 
-![uni-app]({{ site.url }}/assets/img/js/tools.jpg)
+![uni-app](./img/tools.jpg)
 
 ## 项目结构
 
 首先我们通过`HBuilderx` > `文件` > `项目`，选择`uni-app`项目，模板我选择的是默认模板，当然你也可选择其他模板，接着确认创建，如果你选择的是默认模板，此时你的文件夹应该如下图：
 
-![uni-app]({{ site.url }}/assets/img/js/ml.jpg)
+![uni-app](./img/ml.jpg)
 
 接着我根据自己的项目需求，以及为了与`vue`的`pc`项目结构保持一下，分别添加如下文件夹
 
 具体代码可参考GitHub:[weixin-start](https://github.com/ShengChangWei/weixin-start)
 
-![uni-app]({{ site.url }}/assets/img/js/mls.jpg)
+![uni-app](./img/mls.jpg)
 
 ```shell
 +-- api -- (页面接口路径)
@@ -98,7 +98,7 @@ comments: true
 
 * 在`pages`文件夹中，新建一个`index`文件夹并创建一个`index.vue`页面，在这个页面可布局底部`tab`, 根据点击不同的`tab`显示对应的tab页， 如图：
 
-![uni-app]({{ site.url }}/assets/img/js/pages.jpg)
+![uni-app](./img/pages.jpg)
 
 
 注意：
@@ -210,13 +210,13 @@ Vue.component('cu-custom',cuCustom)
 
 * 进入开发页面 `开发` > `开发设置`，设置服务器域名, 如图
 
-![uni-app]({{ site.url }}/assets/img/js/request.jpg)
+![uni-app](./img/request.jpg)
 
 * 发布小程序之前需要配置`appid`,应用名称、logo,可登录微信公众平台进入设置页，设置小程序的基本信息
 
 * 使用`HBuilderx`找到`发行` > `小程序-微信`，点击后稍等片刻会启动微信开发工具，点击微信开发工具`上传`，填写上传信息即可，此时上传到微信公共平台是体验版，需要在`版本管理`>`提交审核`，等待后台审核，审核完成后，小程序也就上线成功了,如图：
 
-![uni-app]({{ site.url }}/assets/img/js/sh.jpg)
+![uni-app](./img/sh.jpg)
 
 ## 总结
 
