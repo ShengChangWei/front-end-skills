@@ -262,7 +262,7 @@ const url = 'http://baidu.com';
 
 ``` javascript
 // bad
-function getName() {
+function getName () {
     return userName;
 }
 
@@ -404,9 +404,9 @@ if (condition) {
 
 ``` javascript
 // bad 前后无空格
-if (condition) {
+if(condition){
     doSomething();
-} else {
+}else{
     doElseSomething();
 }
 
@@ -423,14 +423,14 @@ if (condition) {
 ``` javascript
 // bad
 switch (condition) {
-    case 0:
-        console.log(0);
-        break;
-    case 1:
-        console.log(1);
-        break;
-    default:
-        console.log('default');
+case 0:
+    console.log(0);
+    break;
+case 1:
+    console.log(1);
+    break;
+default:
+    console.log('default');
 }
 
 // good
@@ -579,15 +579,15 @@ const newArry = [...arr];
 ``` javascript
 // bad
 function getUserInfo(user) {
-    const userName = user.name;
-    const userAge = user.age;
+    const name = user.name;
+    const age = user.age;
 }
 
 // good
 function getUserInfo(user) {
     const {
-        userName,
-        userAge
+        name,
+        name
     } = user;
 }
 ```
@@ -655,7 +655,7 @@ function getName() {
 
 ``` javascript
 // bad
-function getName() {
+function getName () {
     const args = Array.prototype.slice.call(arguments);
     return args.join('')
 }
@@ -762,7 +762,7 @@ if (arr.length) {
 
 ``` javascript
 // bad 
-const y = x + 1
+const y=x+1
 
 // good
 const y = x + 1;
@@ -883,7 +883,7 @@ export default useWaterSearchApi; // 以 Api作为后缀
 
 * 路由的`path`和`name`值，是对应页面文件的驼峰命名, 有利于通过地址栏找到对应的页面
 
-![路由示例](./img/router.png)
+![路由示例]({{ site.url }}/assets/img/js/router.png)
 
 * 页面的一级和二级菜单使用嵌套的`children`写法
 * 路由对象添加`meta`对象, `meta`对象有两个属性，一个`title`是当前导航将要在页面中显示的名称，另一个是`hidden`用来判断是否在页面显示
